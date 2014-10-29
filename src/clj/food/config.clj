@@ -30,6 +30,6 @@
                         (catch IllegalArgumentException _)))]
       (assert file "Config file must exist, and be a file")
       (assoc component
-        :atom (atom {})
+        :atom (atom {:modified 0})
         :file (io/file file "app.clj"))))
   (stop [component] component))

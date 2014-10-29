@@ -13,8 +13,8 @@
     (component/system-map
       :collections (data/->Collections (db/db-spec {:path "data"} :food))
       :config (config/->Config)
-      :app (component/using (routes/->App) [:collections :config :server])
-      :server (jetty/web-server port))))
+      :app (component/using (routes/->App) [:collections :config])
+      :server (component/using (jetty/web-server port) [:app]))))
 
 (def system nil)
 
