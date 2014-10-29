@@ -3,6 +3,7 @@
    [bidi.bidi :as b]
    [com.stuartsierra.component :as component]
    [food.config :as config]
+   [food.http.resource.core :as resource]
    [ring.middleware.defaults :refer [wrap-defaults site-defaults]]))
 
 (def catch-all
