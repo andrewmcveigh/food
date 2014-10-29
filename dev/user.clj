@@ -1,5 +1,6 @@
 (ns user
   (:require
+   [clojure.tools.namespace.repl :as ns.repl]
    [com.stuartsierra.component :as component]
    [component.jetty :as jetty]
    [food.config :as config]
@@ -33,4 +34,5 @@
   (start))
 
 (defn reset []
-  (stop))
+  (stop)
+  (ns.repl/refresh :after 'user/go))
